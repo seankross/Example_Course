@@ -1,0 +1,10 @@
+- Class: meta
+  Course: Example Course
+  Lesson: Lesson 2
+  Author: Sean Kross
+  Type: Standard
+  Organization: The Johns Hopkins Data Science Lab
+  Version: 2.2.21
+
+- Class: text
+  Output: This is a second lesson.

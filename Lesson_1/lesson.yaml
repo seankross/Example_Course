@@ -1,0 +1,72 @@
+- Class: meta
+  Course: Example Course
+  Lesson: Lesson 1
+  Author: Sean Kross
+  Type: Standard
+  Organization: The Johns Hopkins Data Science Lab
+  Version: 2.2.21
+  
+- Class: text
+  Output: This is an example of a message question. This just displays text to 
+    the student in the R console and prompts them to press Enter.
+
+- Class: cmd_question
+  Output: "Command questions ask students to type a specific line of code. Get
+    today's date by typing Sys.Date() into the R console."
+  CorrectAnswer: Sys.Date()
+  AnswerTests: omnitest(correctExpr='Sys.Date()')
+  Hint: This is a hint. The student will only see this text if they get the
+    question wrong.
+
+- Class: mult_question
+  Output: "This is a multiple choice question. How many dwarves is Snow White
+    aquainted with?"
+  AnswerChoices: Seven;Ten;Forty;One
+  CorrectAnswer: "Seven"
+  AnswerTests: omnitest(correctVal='Seven')
+  Hint: "This is a hint. The student will only see this text if they get the
+    question wrong."
+
+- Class: exact_question
+  Output: This question asks the student to enter an exact numeric value into 
+    the R console. How many planets are in our solar system?
+  CorrectAnswer: 8
+  AnswerTests: omnitest(correctVal=8)
+  Hint: This is a hint. The student will only see this text if they get the
+    question wrong.
+
+- Class: text_question
+  Output: 'This question asks the student to enter an exact string value into 
+    the R console. Enter "I understand" in order to proceed.'
+  CorrectAnswer: "I understand"
+  AnswerTests: omnitest(correctVal="I understand")
+  Hint: This is a hint. The student will only see this text if they get the
+    question wrong.
+
+- Class: video
+  Output: Would you like to watch a clip from Sesame Street?
+  VideoLink: https://www.youtube.com/watch?v=j-LfQCPJJkY
+
+- Class: figure
+  Output: This question will draw a new figure. The code that draws the figure
+    is located in the lesson directory.
+  Figure: fig1.R
+  FigureType: new
+  
+- Class: figure
+  Output: This question will draw on top of the figure we previously created. 
+    The code that draws on the figure is located in the lesson directory.
+  Figure: fig2.R
+  FigureType: add
+  
+- Class: script
+  Output: "This question opens up a script for the student to edit. The student
+    should edit the script, save the script, and then enter submit() into the
+    R console. This will run the script. In order to evaluate whether the correct
+    script has been written correctly the lesson author needs to write a custom test. An
+    example custom test is written in customTests.R. The scripts themselves are
+    in a directory inside the lesson directory called 'scripts.'"
+  AnswerTests: test_func1()
+  Hint: This is a hint. The student will only see this text if the custom test
+    fails.
+  Script: boring_function.R
